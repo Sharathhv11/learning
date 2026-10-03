@@ -1,0 +1,16 @@
+services:
+  nodeApp:
+    image: testapp:1.0
+    ports:
+      - 3000:3000
+    environment:
+      MONGO_URI: mongodb://admin:qwerty@mongo:27017
+      DB_NAME: admin
+      PORT: 3000
+
+    networks:
+      - test-app-network
+
+networks:
+  test-app-network:
+    external: true
